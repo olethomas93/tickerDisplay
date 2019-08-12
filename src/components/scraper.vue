@@ -16,13 +16,13 @@ export default {
   mounted() {
     axios
       .get(
-        "https://bors.e24.no/server/secure/components?columns=LONG_NAME&itemSector=OSEBX.OSE"
+        "https://bors.e24.no/server/components/graphdata/s1/TICK/I%3ADAX.GER?points=80&period=1opendays"
       )
       .then(
         response => {
           if (response.status === 200) {
             const html = response.data;
-            const $ = cheerio.load(html);
+            console.log(html);
           }
         },
         error => console.log(err)

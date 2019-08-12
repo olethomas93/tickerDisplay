@@ -10,6 +10,8 @@
       v-on:delete-row="removeChildren(index)"
     ></component>
 
+    <request />
+
     <!-- <movable>
       <img alt="teft logo" src="./assets/teft.png" />
     </movable> -->
