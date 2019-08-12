@@ -1,0 +1,88 @@
+body {
+  background: #f6f5f3;
+  height: 100vh;
+}
+
+#app {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #e6e7e9;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* display: flex; */
+/* flex-direction: column; */
+/* align-items: center; */
+/* justify-content: center; */
+/*  */
+body,
+html {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+#btn {
+  align-items: center;
+}
+
+.moveable {
+  position: absolute;
+  width: 200px;
+  height: 100px;
+}
+
+.moveable > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  z-index: 200;
+}
+
+.tradingView {
+  /* z-index: 9999; */
+}
+
+.container {
+  position: relative;
+}
+
+.moveable-control,
+.moveable-control-box {
+  z-index: 2000;
+}
+#display-Container {
+  height: 128px;
+  width: 1280px;
+  border: 1px dashed white;
+  padding: 2px;
+  background-color: black;
+}
+.display-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20%;
+  align-items: center;
+}
+
+.buttonHeader {
+  color: white;
+  background-color: #f6f5f3;
+}
+.buttonHeader .tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.removebtn {
+  position: absolute;
+  margin: -100px 0 0 170px;
+  justify-content: center;
+}
