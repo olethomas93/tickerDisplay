@@ -43,7 +43,6 @@
 
       <div
         class="button "
-        style=""
         color="orange"
         @click="$emit('add-chidren', apps.date)"
       >
@@ -71,15 +70,6 @@
           class="icon alt"
           fab
           :icon="['fab', 'youtube-square']"
-          size="4x"
-          color="orange"
-        ></font-awesome-icon>
-      </div>
-
-      <div class="wasteBin">
-        <font-awesome-icon
-          icon="dumpster"
-          transform="shrink-4 down-2 right-2"
           size="4x"
           color="orange"
         ></font-awesome-icon>

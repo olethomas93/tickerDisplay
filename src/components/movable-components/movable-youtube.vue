@@ -1,21 +1,13 @@
 <template>
-  <movable>
-    <div class="removebtn">
-      <vs-button
-        v-if="this.editMode"
-        @click="$emit('delete-row')"
-        radius
-        type="filled"
-        color="danger"
-        icon="delete"
-      ></vs-button>
-    </div>
+  <movable @resize="update" v-on:delete-row="$emit('delete-row')">
     <youtube
+      id="tewet"
       :fitParent="true"
       :video-id="this.videoId"
       :loop="1"
+      :width="width"
+      :height="height"
       ref="youtube"
-      @playing="playing"
     />
 
     <input
@@ -39,12 +31,21 @@ export default {
   data() {
     return {
       id: null,
-      videoId: "57EIRPeGBKc"
+      videoId: "57EIRPeGBKc",
+      youtubeKey: 0,
+      height: 200,
+      width: 200
     };
   },
 
   components: {
     movable
+  },
+  methods: {
+    update(hw) {
+      this.height = hw.height;
+      this.width = hw.width;
+    }
   },
   computed: mapState(["editMode"])
 };

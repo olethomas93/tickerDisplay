@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="container">
     <buttonheader v-on:add-chidren="this, addChildren($event)" />
-
+    <div></div>
     <component
       v-for="(children, index) in childrens"
       :key="children.name"
@@ -9,8 +9,6 @@
       v-bind:is="children"
       v-on:delete-row="removeChildren(index)"
     ></component>
-
-    <request />
 
     <!-- <movable>
       <img alt="teft logo" src="./assets/teft.png" />
@@ -32,8 +30,7 @@ import timeclock from "./components/movable-components/movable-time";
 import date from "./components/movable-components/movable-date";
 import request from "./components/scraper";
 import youtubeVue from "./components/movable-components/movable-youtube";
-
-import holder from "./components/componentHolder";
+import rotating from "./components/test/header3";
 
 export default {
   name: "app",
@@ -43,7 +40,8 @@ export default {
     buttonheader,
     timeclock,
     date,
-    holder,
+    rotating,
+
     request,
     youtubeVue
   },
@@ -54,7 +52,8 @@ export default {
 
   data() {
     return {
-      childrens: []
+      childrens: [],
+      selectedFile: null
     };
   },
   methods: {
@@ -87,6 +86,8 @@ export default {
 
 
 <style scoped>
+@import url("");
+
 .display-box #headDisplay {
   font-size: 50px;
   color: #f18904;

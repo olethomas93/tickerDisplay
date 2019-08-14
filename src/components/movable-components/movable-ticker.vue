@@ -1,15 +1,5 @@
 <template>
-  <movable>
-    <div class="removebtn">
-      <vs-button
-        v-if="this.editMode"
-        @click="$emit('delete-row')"
-        radius
-        type="filled"
-        color="danger"
-        icon="delete"
-      ></vs-button>
-    </div>
+  <movable v-on:delete-row="$emit('delete-row')">
     <TradingView />
   </movable>
 </template>

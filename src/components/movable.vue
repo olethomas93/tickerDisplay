@@ -1,4 +1,4 @@
-<template   v-drag-and-drop:options="options">
+<template   >
   <Moveable
     class="moveable"
     v-bind="moveable"
@@ -10,6 +10,15 @@
     @warp="handleWarp"
   >
     <conf v-if="this.editMode" :moveStates="moveable"></conf>
+    <vs-button
+      class="removebtn"
+      v-if="this.editMode"
+      @click="$emit('delete-row')"
+      radius
+      type="filled"
+      color="danger"
+      icon="delete"
+    ></vs-button>
 
     <slot> </slot>
   </Moveable>
@@ -101,6 +110,7 @@ export default {
       //   console.log("onResize", width, height);
       delta[0] && (target.style.width = `${width}px`);
       delta[1] && (target.style.height = `${height}px`);
+      this.$emit("resize", { width: width, height: height });
     },
     handleScale({ target, transform, scale }) {
       //   console.log("onScale scale", scale);
