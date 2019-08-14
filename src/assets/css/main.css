@@ -58,10 +58,10 @@ html {
   z-index: 2000;
 }
 #display-Container {
-  height: 128px;
-  width: 1280px;
+  height: 140px;
+  width: 1300px;
   border: 1px dashed white;
-  padding: 2px;
+  padding: 4px;
   background-color: black;
 }
 .display-box {

@@ -28,7 +28,7 @@ import buttonheader from "./components/test/Header";
 import Sidb from "./components/test/Sidebar";
 import timeclock from "./components/movable-components/movable-time";
 import date from "./components/movable-components/movable-date";
-import request from "./components/scraper";
+
 import youtubeVue from "./components/movable-components/movable-youtube";
 import rotating from "./components/test/header3";
 
@@ -41,8 +41,6 @@ export default {
     timeclock,
     date,
     rotating,
-
-    request,
     youtubeVue
   },
 
