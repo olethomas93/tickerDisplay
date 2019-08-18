@@ -6,8 +6,8 @@
 
 
 <script>
-import movable from "../movable";
-import TradingView from "../Tradingview";
+import movable from "../static/movable";
+import TradingView from "../static/Tradingview";
 import { mapState } from "vuex";
 export default {
   mounted() {

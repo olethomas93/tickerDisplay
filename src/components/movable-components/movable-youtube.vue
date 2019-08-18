@@ -21,8 +21,8 @@
 
 
 <script>
-import movable from "../movable";
-import vueTube from "../Youtubeplayer";
+import movable from "../static/movable";
+import vueTube from "../static/Youtubeplayer";
 import { mapState } from "vuex";
 export default {
   mounted() {

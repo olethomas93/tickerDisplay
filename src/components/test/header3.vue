@@ -1,5 +1,19 @@
 <template>
+
+
   <div class="csstransforms">
+
+        <div class="tabTop">
+      <img
+        alt="teft logo"
+        src="./logo_ntnu_u-slagord.png"
+        class="img"
+        id="ntnu"
+      />
+      <h4 id="header" class="drop">Teft Ticker</h4>
+
+      <img alt="teft logo" src="./teft.png" class="img" id="teft" />
+    </div>
     <button class="cn-button" id="cn-button" @click="clickButton($event)">
       MENU
     </button>
@@ -10,26 +24,64 @@
       @click="clickWrapper($event)"
     >
       <ul>
+       
         <li>
-          <a href="#"><span class="icon-picture"></span></a>
+          <a href="#"> <div class="button" @click="$emit('add-chidren', apps.time)">
+        <font-awesome-icon
+          class="icon"
+          icon="clock"
+          transform="shrink-4 down-2 right-2"
+          size="2x"
+          color="orange"
+        ></font-awesome-icon>
+      </div></a>
         </li>
         <li>
-          <a href="#"><span class="icon-home"></span></a>
+          <a href="#"> <div class="button" @click="$emit('add-chidren', apps.tradingView)">
+        <font-awesome-icon
+          class="icon"
+          icon="dollar-sign"
+          size="2x"
+          color="orange"
+        ></font-awesome-icon>
+      </div></a>
         </li>
         <li>
-          <a href="#"><span class="icon-home"></span></a>
+          <a href="#"> <div
+        class="button "
+        color="orange"
+        @click="$emit('add-chidren', apps.date)"
+      >
+        <font-awesome-icon
+          class="icon"
+          icon="calendar-alt"
+          transform="shrink-4 down-2 right-2"
+          size="2x"
+          color="orange"
+        ></font-awesome-icon>
+      </div></a>
         </li>
         <li>
-          <a href="#"><span class="icon-facetime-video"></span></a>
+          <a href="#">  <div class="button" @click="$emit('add-chidren', apps.youtube)">
+        <font-awesome-icon
+          class="icon alt"
+          fab
+          :icon="['fab', 'youtube-square']"
+          size="2x"
+          color="orange"
+        ></font-awesome-icon>
+      </div></a>
         </li>
         <li>
-          <a href="#"><span class="icon-envelope-alt"></span></a>
-        </li>
-        <li>
-          <a href="#"><span class="icon-envelope-alt"></span></a>
-        </li>
-        <li>
-          <a href="#"><span class="icon-envelope-alt"></span></a>
+          <a href="#"> <div class="button">
+        <font-awesome-icon
+          class="icon"
+          icon="upload"
+          transform="shrink-4 down-2 right-2"
+          size="2x"
+          color="orange"
+        ></font-awesome-icon>
+      </div></a>
         </li>
       </ul>
     </div>
@@ -60,7 +112,7 @@ export default {
         var e = window.event;
         e.stopPropagation(); //so that it doesn't trigger click event on document
       }
-      if (!open) {
+      if (!this.isActive) {
         this.openNav();
       } else {
         this.closeNav();
@@ -71,16 +123,16 @@ export default {
       console.log("openNav");
       var button = document.getElementById("cn-button");
 
-      open = true;
-      button.innerHTML = "-";
+     
+      button.innerHTML = "close";
       this.isActive = true;
     },
     closeNav() {
       console.log("closeNav");
       var button = document.getElementById("cn-button");
 
-      open = false;
-      button.innerHTML = "+";
+    
+      button.innerHTML = "Menu";
       this.isActive = false;
     }
   }
@@ -90,6 +142,34 @@ export default {
 
 <style scoped>
 @import url(https://netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css);
+
+.csstransforms{
+ display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+.tabTop {
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+  justify-content: center;
+}
+img {
+  margin: 70px;
+}
+#ntnu {
+  width: 200px;
+}
+#teft {
+  width: 200px;
+}
+#header {
+  font-size: 100px;
+  color: #f18904;
+}
 
 .cn-button {
   border: none;
@@ -103,8 +183,9 @@ export default {
   background-color: orange;
   position: absolute;
   left: 50%;
+  top:10em;
   margin-left: -1.75em;
-  bottom: -1.75em;
+  /* bottom: -1.75em; */
   border-radius: 50%;
   cursor: pointer;
   z-index: 11;
@@ -119,7 +200,7 @@ export default {
   top: 100%;
   left: 50%;
   z-index: 10;
-  margin-top: -13em;
+  /* margin-top: -13em; */
   margin-left: -13.5em;
   width: 27em;
   height: 27em;
@@ -130,6 +211,7 @@ export default {
   transform: scale(0.1);
   pointer-events: none;
   overflow: hidden;
+  top:8em;
 }
 
 /*cover to prevent extra space of anchors from being clickable*/
@@ -154,13 +236,13 @@ export default {
 
   left: 50%;
   overflow: hidden;
-  margin-top: -1.3em;
+  margin-top: -1.4em;
   margin-left: -10em;
   width: 10em;
   height: 10em;
   font-size: 1.5em;
   transition: all 0.3s ease;
-  transform: rotate(76deg) skew(60deg);
+  transform: rotate(50deg) skew(60deg);
   transform-origin: 100% 100%;
   pointer-events: none;
 }
@@ -174,15 +256,15 @@ export default {
   width: 14.5em;
   height: 14.5em;
   border-radius: 50%;
-  background: #429a67;
-  background: radial-gradient(transparent 35%, #429a67 35%);
+  background: white;
+  background: radial-gradient(transparent 35%, #f6f5f3 35%);
   color: #fff;
   text-align: center;
   text-decoration: none;
   font-size: 1.2em;
   line-height: 2;
   transition: all 0.3s ease;
-  transform: skew(-60deg) rotate(-75deg) scale(1);
+  transform: skew(-60deg) rotate(-70deg) scale(0.8);
   pointer-events: auto;
 }
 
@@ -199,7 +281,7 @@ export default {
 .csstransforms .cn-wrapper ul li a:hover,
 .csstransforms .cn-wrapper ul li a:active,
 .csstransforms .cn-wrapper ul li a:focus {
-  background: radial-gradient(transparent 35%, #449e6a 35%);
+  background: radial-gradient(transparent 35%, white 35%);
 }
 
 .csstransforms .openednav {
@@ -234,16 +316,7 @@ export default {
   transform: rotate(108deg) skew(60deg);
 }
 
-.csstransforms .openednav ul li:nth-child(6) {
-  transform: rotate(140deg) skew(60deg);
-}
 
-.csstransforms .openednav ul li:nth-child(7) {
-  transform: rotate(172deg) skew(60deg);
-}
-.csstransforms .openednav ul li:nth-child(8) {
-  transform: rotate(190deg) skew(60deg);
-}
 @media only screen and (max-width: 620px) {
   .no-csstransforms li {
     width: 4em;

@@ -12,11 +12,14 @@
     </div>
     <vs-popup title="settings" :active.sync="settings">
       <div class="button-settings">
-        <div v-for="symbol in symbols" :key="symbol.title">
+        <div id="input" v-for="(symbol,index) in symbols" :key="symbol.title">
+          
           <vs-input placeholder="Pro Name" v-model="symbol.proName" />
-
+           
           <vs-input placeholder="description" v-model="symbol.title" />
-          <hr />
+          
+         <button @click="removeItem(index)"> X </button>
+          <br>
         </div>
         <vs-button @click="addToTicker">Add New</vs-button>
 
@@ -66,6 +69,9 @@ export default {
     addToTicker() {
       this.symbols.push({});
     },
+    removeItem(index){
+        this.symbols.splice(index,1)
+    },
     validText() {
       var valid = false;
       for (var symbol in this.symbols) {
@@ -99,6 +105,16 @@ div.button {
   right: -45px;
   top: -20px;
   padding: 10px 0 10px 50px;
+}
+
+.button-settings{
+  align-items: center;
+}
+#input{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 </style>
 

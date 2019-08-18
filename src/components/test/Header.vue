@@ -103,11 +103,7 @@ export default {
       this.$store.commit("change", this.editMode);
     }
   },
-  computed: {
-    queen() {
-      return faChessQueen;
-    }
-  }
+ 
 };
 </script>
 

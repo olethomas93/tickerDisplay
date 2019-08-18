@@ -6,8 +6,8 @@
 
 
 <script>
-import movable from "../movable";
-import Date from "../date";
+import movable from "../static/movable";
+import Date from "../static/date";
 import { mapState } from "vuex";
 export default {
   components: {
