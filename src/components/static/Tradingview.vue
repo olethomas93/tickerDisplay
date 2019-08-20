@@ -79,9 +79,9 @@ export default {
 #trading-container {
   position: absolute;
   width: 100%;
-  z-index: 1;
+  z-index: 99999;
   box-sizing: border-box;
-  transform: scale(1.3);
+  /* transform: scale(1.3); */
 }
 </style>
 

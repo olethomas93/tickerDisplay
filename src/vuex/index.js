@@ -6,11 +6,16 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
   state: {
     editMode: false,
-    activeChildren: []
+    activeChildren: [],
+    editor: false
   },
   mutations: {
     change(state, editMode) {
       state.editMode = editMode;
+    },
+
+    showEditor(state, editor) {
+      state.editor = editor;
     },
     addChildren(state, child) {
       state.activeChildren.push(child);
@@ -22,6 +27,8 @@ export const store = new Vuex.Store({
   getters: {
     editMode: state => state.editMode,
 
-    activeChildren: state => state.activeChildren
+    activeChildren: state => state.activeChildren,
+
+    editor: state => state.editor
   }
 });

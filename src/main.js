@@ -13,7 +13,8 @@ import {
   faDumpster,
   faDollarSign,
   faCalendarAlt,
-  faUpload
+  faUpload,
+  faEdit
 } from "@fortawesome/free-solid-svg-icons";
 import {
   FontAwesomeIcon,
@@ -28,7 +29,8 @@ library.add(
   faCalendarAlt,
   faUpload,
   faYoutubeSquare,
-  faTwitter
+  faTwitter,
+  faEdit
 );
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 Vue.use(VueDraggable);

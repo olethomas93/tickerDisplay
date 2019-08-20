@@ -7,7 +7,7 @@
         class="img"
         id="ntnu"
       />
-      <h4 id="header" class="drop">Teft Ticker</h4>
+      <h4 id="header" class="drop">Ticker</h4>
 
       <img alt="teft logo" src="./teft.png" class="img" id="teft" />
            <vs-checkbox
@@ -16,7 +16,15 @@
         icon="settings"
         color="success"
         v-model="editMode"
-        >Edit Mode</vs-checkbox>
+        >Edit</vs-checkbox>
+
+           <vs-checkbox
+        id="editor"
+        @change="startEditor"
+        icon="settings"
+        color="success"
+        v-model="editor"
+        >show Editor</vs-checkbox>
       
     </div>
     
@@ -84,6 +92,16 @@
         ></font-awesome-icon>
       </div> </a>
 
+       <a href="#" class="menu-item">  <div class="button" @click="$emit('add-chidren', apps.editor)">
+        <font-awesome-icon
+          class="icon"
+          icon="edit"
+          transform="shrink-4 down-2 right-2"
+          size="lg"
+          color="white"
+        ></font-awesome-icon>
+      </div> </a>
+
  
   
   
@@ -123,7 +141,8 @@ export default {
         tradingView: "tradingView",
         time: "time",
         date: "date",
-        youtube: "youtube"
+        youtube: "youtube",
+        editor:"editor"
       }
     };
   },
@@ -132,7 +151,10 @@ export default {
   methods: {
     toggleEdit() {
       this.$store.commit("change", this.editMode);
-    }
+    },
+     startEditor() {
+      this.$store.commit("showEditor", this.editor);
+    },
   },
  
 };
@@ -176,7 +198,7 @@ $bg:#673ab7;
 $pi:3.14;
 
 //config
-$menu-items:5;
+$menu-items:6;
 $open-distance:105px;
 $opening-angle:$pi*2;
 

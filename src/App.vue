@@ -2,7 +2,8 @@
   <div id="app" class="container">
     <buttonheader v-on:add-chidren="this, addChildren($event)" />
    
-       
+   
+      
     
     <component
       v-for="(children, index) in childrens"
@@ -12,11 +13,8 @@
       v-on:delete-row="removeChildren(index)"
     ></component>
 
-
-    <div class="display-box ">
-      <h4 id="headDisplay">Ticker display</h4>
-      <div id="display-Container"></div>
-    </div>
+  <display/>
+    
   </div>
 </template>
 
@@ -30,6 +28,9 @@ import date from "./components/movable-components/movable-date";
 import buttonheader from "./components/test/header4"
 import youtubeVue from "./components/movable-components/movable-youtube";
 import rotating from "./components/test/header3";
+import display from "./components/test/display-box"
+import editor from "./components/static/editor"
+
 
 export default {
   name: "app",
@@ -41,6 +42,8 @@ export default {
     date,
     rotating,
     youtubeVue,
+    display,
+    editor
     
   },
 
@@ -69,9 +72,12 @@ export default {
       if (name == "youtube") {
         this.$store.commit("addChildren", youtubeVue);
       }
+       if (name == "editor") {
+        this.$store.commit("addChildren", editor);
+      }
     },
     removeChildren(index) {
-      console.log("fegege");
+     
       this.$store.commit("removeChildren", index);
     },
     setChildren(childrens) {

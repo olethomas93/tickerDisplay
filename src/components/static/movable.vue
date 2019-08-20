@@ -53,23 +53,7 @@ export default {
         warpable: false,
         pinchable: false
       },
-      options: {
-        dropzoneSelector: ".display-box",
-        draggableSelector: ".moveable-control-box ",
-
-        showDropzoneAreas: true,
-        multipleDropzonesItemsDraggingEnabled: true,
-        onDragstart: function(event) {
-          console.log("fdsfsddfds");
-        },
-        onDragenter: function(event) {
-          console.log("ENTER");
-        },
-        onDrop: function(event) {
-          console.log(event.items);
-          this.addChildren();
-        }
-      },
+     
 
       states: {
         scalable: "Scalable",
@@ -91,7 +75,7 @@ export default {
     },
 
     dragEnter(ev) {
-      console.log("efwefew");
+     
       if (ev.clientY > ev.target.height / 2) {
         ev.target.style.marginBottom = "10px";
       } else {
