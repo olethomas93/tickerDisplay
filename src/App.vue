@@ -3,11 +3,10 @@
     <buttonheader v-on:add-chidren="this, addChildren($event)" />
    
    
-      
-    
+     
     <component
-      v-for="(children, index) in childrens"
-      :key="children.name"
+      v-for="(children, index) in this.activeChildren"
+      :key="children.id"
       :data="children"
       v-bind:is="children"
       v-on:delete-row="removeChildren(index)"
@@ -31,7 +30,7 @@ import rotating from "./components/test/header3";
 import display from "./components/test/display-box"
 import editor from "./components/static/editor"
 
-
+import { mapState } from "vuex";
 export default {
   name: "app",
   components: {
@@ -45,16 +44,39 @@ export default {
     display,
     editor
     
+    
+  },
+
+  created(){
+this.childrens = this.$store.getters.activeChildren;
+
+ 
+
   },
 
   mounted() {
-    this.childrens = this.$store.getters.activeChildren;
+
+     this.childrens = this.$store.getters.activeChildren;
+
+      if(localStorage.getItem('children')) {
+      try {
+        this.setChildren(JSON.parse(localStorage.getItem('children')));
+      } catch(e) {
+        console.log(e);
+        localStorage.removeItem('children');
+      }
+    }
+    
+    
+    
+  
   },
+  computed: mapState(["activeChildren"]),
 
   data() {
     return {
       childrens: [],
-      selectedFile: null
+     
     };
   },
   methods: {
@@ -62,8 +84,9 @@ export default {
       console.log(name);
       if (name == "tradingView") {
         this.$store.commit("addChildren", tradingview);
+        
       }
-      if (name == "time") {
+      if (name == "timedigital") {
         this.$store.commit("addChildren", timeclock);
       }
       if (name == "date") {
@@ -75,13 +98,38 @@ export default {
        if (name == "editor") {
         this.$store.commit("addChildren", editor);
       }
+     
+      this.savetoLocalStorage();
+
+      
     },
     removeChildren(index) {
      
       this.$store.commit("removeChildren", index);
+
+      this.savetoLocalStorage();
     },
-    setChildren(childrens) {
-      this.$store.commit("setChildren", childrens);
+    setChildren(children){
+    //  console.log(children);
+     children.forEach(child => {
+
+      this.addChildren(child.name);
+       
+     });
+       
+       
+        
+      
+
+       
+     
+    
+
+    },
+   
+      savetoLocalStorage() {
+      let parsed = JSON.stringify(this.activeChildren);
+      localStorage.setItem('children', parsed);
     }
   }
 };
@@ -98,5 +146,9 @@ export default {
 
   left: 45%;
   top: -50%;
+}
+
+#components{
+  left:20%
 }
 </style>

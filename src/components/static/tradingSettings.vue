@@ -12,13 +12,13 @@
     </div>
     <vs-popup title="settings" :active.sync="settings">
       <div class="button-settings">
-        <div id="input" v-for="(symbol,index) in symbols" :key="symbol.title">
+        <div id="input" v-for="(symbol,index) in symbols" :key="symbol.id">
           
-          <vs-input placeholder="Pro Name" v-model="symbol.proName" />
+          <vs-input placeholder="Pro Name" v-model="symbol.proName " id="proname" />
            
-          <vs-input placeholder="description" v-model="symbol.title" />
+          <vs-input placeholder="description" v-model="symbol.title" id="title" />
           
-         <button @click="removeItem(index)"> X </button>
+         <button @click="removeItem(index)"  id="xbtn"> X </button>
           <br>
         </div>
         <vs-button @click="addToTicker">Add New</vs-button>
@@ -115,6 +115,11 @@ div.button {
   justify-content: center;
   align-items: center;
   flex-direction: row;
+}
+#xbtn{
+  background-color: red;
+  border-radius: 30%;
+
 }
 </style>
 

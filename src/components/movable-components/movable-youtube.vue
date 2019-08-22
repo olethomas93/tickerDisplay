@@ -1,5 +1,5 @@
 <template>
-  <movable @resize="update" v-on:delete-row="$emit('delete-row')">
+  <movable class="youtube" @resize="update" v-on:delete-row="$emit('delete-row')">
     <youtube
       id="tewet"
       :fitParent="true"
@@ -10,12 +10,7 @@
       ref="youtube"
     />
 
-    <input
-      id="url"
-      v-if="this.editMode"
-      v-model="videoId"
-      placeholder="video ID"
-    />
+   
   </movable>
 </template>
 
@@ -54,5 +49,10 @@ export default {
 <style scoped>
 #url {
   z-index: 99099;
+}
+
+.moveable.youtube{
+  left:200px;
+  top:300px;
 }
 </style>

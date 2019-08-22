@@ -139,7 +139,7 @@ export default {
       editMode: false,
       apps: {
         tradingView: "tradingView",
-        time: "time",
+        time: "timedigital",
         date: "date",
         youtube: "youtube",
         editor:"editor"

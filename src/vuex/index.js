@@ -20,6 +20,10 @@ export const store = new Vuex.Store({
     addChildren(state, child) {
       state.activeChildren.push(child);
     },
+    setChildren(state, children) {
+      console.log(children);
+      state.activeChildren = children;
+    },
     removeChildren(state, index) {
       state.activeChildren.splice(index, 1);
     }

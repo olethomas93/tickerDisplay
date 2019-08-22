@@ -16,6 +16,8 @@ import { mapState } from "vuex";
 import editorview from "./edtorview"
  
 export default {
+  name:"editor",
+  id: Date.now + Math.random,
   data() {
     return {
       content: "<h1>Edit-mode to open editor</h1>"

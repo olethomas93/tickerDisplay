@@ -1,5 +1,5 @@
 <template>
-  <movable v-on:delete-row="$emit('delete-row')">
+  <movable class="ticker" v-on:delete-row="$emit('delete-row')">
     <TradingView />
   </movable>
 </template>
@@ -10,12 +10,15 @@ import movable from "../static/movable";
 import TradingView from "../static/Tradingview";
 import { mapState } from "vuex";
 export default {
+  name:"tradingView",
+   id: Date.now + Math.random,
   mounted() {
-    this.id = this._uid;
+    
   },
   data() {
     return {
-      id: null
+     
+
     };
   },
 
@@ -27,4 +30,13 @@ export default {
 };
 </script>
 
+<style scoped>
 
+.moveable.ticker{
+  left:281px;
+  top:855px;
+}
+
+
+
+</style>
