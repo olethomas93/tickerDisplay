@@ -58,7 +58,7 @@ html {
   z-index: 2000;
 }
 #display-Container {
-  height: 300px;
+  height: 200px;
   width: 1500px;
   border: 1px dashed white;
   padding: 4px;
