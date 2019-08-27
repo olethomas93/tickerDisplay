@@ -1,10 +1,11 @@
 <template>
-  <div>
+  <div> 
+    <movable class ="editor">
     <vue-editor v-if="this.editor" class="editor" v-model="content">
 
       
     </vue-editor>
-
+    </movable>
     <editorview  :content="content"  v-on:delete-row="$emit('delete-row')"></editorview>
   </div>
 </template>
@@ -14,6 +15,7 @@ import { VueEditor } from 'vue2-editor'
 
 import { mapState } from "vuex";
 import editorview from "./edtorview"
+import movable from "../static/movable"
  
 export default {
   name:"editor",
@@ -26,7 +28,8 @@ export default {
    
 components: {
   VueEditor,
-  editorview
+  editorview,
+  movable
 
   
 },
@@ -38,10 +41,15 @@ components: {
 
 .editor{
 
-    height:200px;
-    width:640px;
+    height:100px;
+    width:814px;
 
     position: absolute;
+}
+
+.moveable.editor{
+  left:500px;
+  top:130px;
 }
 
 
