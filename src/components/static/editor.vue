@@ -1,11 +1,11 @@
 <template>
   <div> 
-    <movable class ="editor">
+    
     <vue-editor v-if="this.editor" class="editor" v-model="content">
 
       
     </vue-editor>
-    </movable>
+    
     <editorview  :content="content"  v-on:delete-row="$emit('delete-row')"></editorview>
   </div>
 </template>
