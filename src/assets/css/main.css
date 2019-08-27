@@ -58,8 +58,8 @@ html {
   z-index: 2000;
 }
 #display-Container {
-  height: 140px;
-  width: 1300px;
+  height: 300px;
+  width: 1500px;
   border: 1px dashed white;
   padding: 4px;
   background-color: black;
@@ -68,7 +68,7 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 20%;
+  margin: 5%;
   align-items: center;
 }
 

@@ -199,7 +199,7 @@ $pi:3.14;
 
 //config
 $menu-items:6;
-$open-distance:105px;
+$open-distance:60px;
 $opening-angle:$pi*2;
 
 body{
@@ -283,7 +283,7 @@ $hamburger-spacing:8px;
   $width:650px;
   $height:150px;
   position:absolute;
-  left:50%;
+  left:20%;
   margin-left:-80px;
   padding-top:20px;
   padding-left:80px;

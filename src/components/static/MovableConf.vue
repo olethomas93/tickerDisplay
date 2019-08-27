@@ -1,16 +1,16 @@
 <template>
   <ul class="checkBox">
     <li>
-      <vs-checkbox v-model="moveStates.warpable">warpable</vs-checkbox>
+      <vs-checkbox v-model="moveStates.warpable">wrap</vs-checkbox>
     </li>
     <li>
       <vs-checkbox color="success" v-model="moveStates.scalable"
-        >Scalable</vs-checkbox
+        >Scale</vs-checkbox
       >
     </li>
     <li>
       <vs-checkbox color="danger" v-model="moveStates.resizable"
-        >resizable</vs-checkbox
+        >size</vs-checkbox
       >
     </li>
     <li></li>
