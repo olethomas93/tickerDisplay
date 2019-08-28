@@ -43,6 +43,8 @@ components: {
 
     height:100px;
     width:814px;
+    left:500px;
+  top:130px;
 
     position: absolute;
 }
