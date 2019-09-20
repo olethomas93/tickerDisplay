@@ -118,6 +118,10 @@ export default {
       clearTimeout(this.hideTimeout);
       this.activateSettings = true;
     },
+
+    /**
+     * make the blue box disapair 
+     */
     toggleEdit() {
       var elements = document.getElementsByClassName("moveable-control-box");
 

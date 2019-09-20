@@ -1,5 +1,5 @@
 <template>
-  <movable v-on:delete-row="$emit('delete-row')">
+  <movable class="showDate" v-on:delete-row="$emit('delete-row')">
     <Date />
   </movable>
 </template>
@@ -27,6 +27,15 @@ data(){
 };
 </script>
 
+<style  scoped>
+
+.moveable.showDate{
+  left:1147px;
+  top:537px;
+}
+
+
+</style>
 
 
 

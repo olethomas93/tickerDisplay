@@ -34,7 +34,7 @@ export default {
 
 .moveable.ticker{
   left:281px;
-  top:522px;
+  top:438px;
 }
 
 

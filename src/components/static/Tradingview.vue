@@ -78,10 +78,10 @@ export default {
 <style scoped>
 #trading-container {
   position: absolute;
-  width: 100%;
+  width: 1000px;
   z-index: 99999;
   box-sizing: border-box;
-  /* transform: scale(1.3); */
+  transform: scale(1.5);
 }
 </style>
 
