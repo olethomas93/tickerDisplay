@@ -30,12 +30,12 @@ data(){
 <style  scoped>
 
 .moveable.showDate{
-  left:1147px;
-  top:537px;
+  left:1250px;
+  top:550px;
 }
 
 
 </style>
-
+Y
 
 
