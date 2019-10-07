@@ -35,8 +35,8 @@ export default {
 <style scoped>
 
 .moveable.tiemi{
-  left:206px;
-  top:535px;
+  left:350px;
+  top:550px;
 }
 
 
